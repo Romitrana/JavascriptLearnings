@@ -6,7 +6,8 @@ const h = document.getElementById("hour");
 const m = document.getElementById("min");
 const s = document.getElementById("sec");
 const message = document.getElementById("message");
-const progressE1 = document.getElementById('progress');
+const progressE1 = document.getElementById("progress");
+const resetE1 = document.getElementById("reset");
 
 let totalHour = Number(rangeE1.value);
 let totalTimeMilliseconds = totalHour * 60 * 60 * 1000;
@@ -30,10 +31,9 @@ btn1.addEventListener("click", () => {
     btn1.disabled = true; // Disable button while timer is running
     message.textContent = "Timer is now running! Stay focused!";
     message.style.color = "rgb(53, 194, 25)";
-    btn1.textContent = "Pause"; // Change button text to "Pause"
     btn1.style.background = "rgb(53, 194, 25)";
     btn1.style.color = "#fff";
-    
+
     // Start the timer
     stoptimerID = setInterval(() => {
       setTime -= 1000; // Decrease time by 1 second
@@ -47,7 +47,7 @@ btn1.addEventListener("click", () => {
       const hours = Math.floor(setTime / (60 * 60 * 1000));
       const minutes = Math.floor((setTime % (60 * 60 * 1000)) / (60 * 1000));
       const seconds = Math.floor((setTime % (60 * 1000)) / 1000);
-      
+
       // Update timer display with zero-padding
       h.textContent = String(hours).padStart(2, "0");
       m.textContent = String(minutes).padStart(2, "0");
@@ -87,5 +87,8 @@ btn2.addEventListener("click", () => {
   btn1.style.color = "black";
   message.textContent = "Timer stopped. You can reset or continue.";
   message.style.color = "red"; // Indicate the timer has been stopped
-  progressE1.value = 100; // Reset progress bar when timer stops
+});
+
+resetE1.addEventListener("click", (e) => {
+  location.reload();
 });

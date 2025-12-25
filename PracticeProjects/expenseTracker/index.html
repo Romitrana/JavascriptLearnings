@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Expense Tracker</h2>
+      <p>manage your daily expenses with ease!</p>
+    </header>
+    <section class="container">
+      <form id="data-entries">
+        <input
+          type="text"
+          placeholder="Expense Name"
+          id="expenseInput"
+          required
+        />
+        <input
+          type="number"
+          placeholder="quantity"
+          id="quantityInput"
+          min="1"
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          id="amountInput"
+          min="1"
+          required
+        />
+        <select id="categoryInput" required>
+          <option value="">Category</option>
+          <option value="food">Food</option>
+          <option value="transport">Transport</option>
+          <option value="health">Health</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="utilities">Utilities</option>
+          <option value="savings">Savings</option>
+          <option value="others">Others</option>
+        </select>
+        <input type="date" id="dateInput" />
+        <button id="addbtn">Add Expense</button>
+      </form>
+      <table id="expenses">
+        <thead>
+          <tr>
+            <th>Expense</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody">
+          <!-- rows will be injected here -->
+        </tbody>
+      </table>
+      <div id="model"></div>
+      <div id="notify">
+        <p id="progress"></p>
+        <span id="notify-msg">this is some message...</span>
+        <span id="closeNotify">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>

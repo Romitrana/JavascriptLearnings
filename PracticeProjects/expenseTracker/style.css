@@ -1,0 +1,185 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+header {
+  /* border: 2px solid #333; */
+  padding: 1rem;
+  text-align: center;
+}
+header h2 {
+  font-size: 2.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+header p {
+  margin-top: 0.2rem;
+  text-align: right;
+  color: green;
+}
+
+section {
+  border: 2px solid #333;
+  padding: 1rem;
+  min-width: 70%;
+  height: 100vh;
+  position: relative;
+}
+
+#data-entries {
+  /* border: 2px solid #333; */
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: #f9f9f9; /* Added a light background */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* space between inputs */
+  justify-content: center;
+}
+
+/* Make each input take a default width */
+#data-entries input,
+#data-entries select {
+  flex: 1 1 150px; /* Grow/shrink, minimum 150px */
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+}
+
+/* Button styling */
+#data-entries button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* container */
+
+#expenses {
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  width: 100%;
+  /* border: 2px solid #333; */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table,
+th,
+td {
+  border: none;
+}
+
+#expenses td {
+  padding: 0.3rem;
+  text-align: center;
+}
+.rowbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.rowbtn button {
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.rowbtn button:last-child {
+  background-color: rgb(243, 64, 64);
+  color: #fff;
+}
+.rowbtn button:first-child {
+  background-color: #333;
+  color: #fff;
+}
+tbody tr:nth-child(2n + 1) {
+  background-color: rgb(123, 184, 123);
+}
+/* tbody tr:nth-child(2n) {
+  background-color: green;
+  color: #fff;
+} */
+
+/* model  & message */
+
+/* #model {
+} */
+
+#notify {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: -20%;
+  gap: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fall 0.4s forwards ease;
+  display: none;
+  background-color: #7dfb7d;
+  border: 3px solid #40a740;
+  font-size: 1.1rem;
+  color: #0c5d0c;
+  overflow: hidden;
+}
+
+#progress {
+  background-color: #333;
+  opacity: 0.1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+#notify #closeNotify {
+  padding: 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#notify #notify-msg {
+  padding: 0.3rem;
+}
+@keyframes fall {
+  from {
+    top: -20%;
+  }
+  to {
+    top: 1rem;
+  }
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+  .data-entries input,
+  .data-entries select {
+    flex: 1 1 45%; /* two columns */
+  }
+
+  .data-entries button {
+    flex-basis: 100%; /* button full width */
+  }
+}

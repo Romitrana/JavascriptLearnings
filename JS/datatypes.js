@@ -24,7 +24,7 @@ Symbol	    "symbol"	                    Symbol
 //console.log(b);
 
 //---------------------undefined------------------------
-// console.log(a) //cannot be accessed before initialization in case of let &n const in case of var it will be undefined
+// console.log(a) //cannot be accessed before initialization in case of let & const in case of var it will be undefined
 // const a=4;
 
 // let a;
